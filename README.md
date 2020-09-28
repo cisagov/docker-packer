@@ -1,4 +1,4 @@
-# docker-packer 💀📦 #
+# docker-packer 🐳📦 #
 
 [![GitHub Build Status](https://github.com/cisagov/docker-packer/workflows/build/badge.svg)](https://github.com/cisagov/docker-packer/actions)
 
