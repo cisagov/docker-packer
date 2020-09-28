@@ -5,5 +5,8 @@
 - name: Import UFW playbook
   import_playbook: ufw.yml
 
+- name: Import Docker playbook
+  import_playbook: ufw.yml
+
 - name: Import AWS playbook
   import_playbook: aws.yml

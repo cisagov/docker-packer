@@ -1,0 +1,7 @@
+---
+- hosts: all
+  name: Install Docker
+  become: yes
+  become_method: sudo
+  roles:
+    - docker
