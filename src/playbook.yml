@@ -8,5 +8,8 @@
 - name: Import Docker playbook
   import_playbook: docker.yml
 
+- name: Import VNC playbook
+  import_playbook: vnc.yml
+
 - name: Import AWS playbook
   import_playbook: aws.yml
