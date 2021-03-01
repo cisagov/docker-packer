@@ -6,7 +6,7 @@
   roles:
     - role: vnc
       vars:
-        # The password, and ssh keys for the VNC user
+        # The password and ssh keys for the VNC user
         password: "{{ lookup('aws_ssm', '/vnc/password') }}"
         public_ssh_key: "{{ lookup('aws_ssm', '/vnc/ssh/rsa_public_key') }}"
         private_ssh_key: "{{ lookup('aws_ssm', '/vnc/ssh/rsa_private_key') }}"
