@@ -11,6 +11,10 @@
         private_ssh_key: "{{ lookup('aws_ssm', '/vnc/ssh/rsa_private_key') }}"
         public_ssh_key: "{{ lookup('aws_ssm', '/vnc/ssh/rsa_public_key') }}"
         user_groups:
+          # Note that this means that the docker.yml playbook _must_
+          # run before this one, so that the docker group has been
+          # created.
+          - docker
           # Note that this means that the aws.yml playbook _must_ run
           # before this one, so that the efs_users group has been
           # created.

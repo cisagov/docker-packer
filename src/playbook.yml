@@ -11,8 +11,8 @@
 - name: Import Docker playbook
   ansible.builtin.import_playbook: docker.yml
 
-# The AWS playbook must run before this one, since this playbook uses
-# a user group created in the AWS playbook.
+# The AWS and Docker playbooks must run before this one, since this
+# playbook uses user groups created in those playbooks.
 - name: Import VNC playbook
   ansible.builtin.import_playbook: vnc.yml
 
