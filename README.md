@@ -2,7 +2,7 @@
 
 [![GitHub Build Status](https://github.com/cisagov/docker-packer/workflows/build/badge.svg)](https://github.com/cisagov/docker-packer/actions)
 
-This project can be used to build a Debian Buster AMI with
+This project can be used to build a Debian Bullseye AMI with
 [Docker](https://www.docker.com/) installed.
 
 ## Pre-requisites ##
