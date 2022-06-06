@@ -15,7 +15,6 @@
   name: dev_ssh_access
 - src: https://github.com/cisagov/ansible-role-docker
   name: docker
-  version: improvement/add-docker-compose-plugin
 - src: https://github.com/cisagov/ansible-role-htop
   name: htop
 - src: https://github.com/cisagov/ansible-role-nvme
