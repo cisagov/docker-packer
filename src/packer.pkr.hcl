@@ -59,6 +59,7 @@ data "amazon-ami" "debian_bullseye" {
 
 locals { timestamp = regex_replace(timestamp(), "[- TZ:]", "") }
 
+source "amazon-ebs" "docker" {
   ami_name                    = "docker-hvm-${local.timestamp}-x86_64-ebs"
   ami_regions                 = var.ami_regions
   associate_public_ip_address = true
