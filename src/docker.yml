@@ -3,5 +3,7 @@
   name: Install Docker
   become: yes
   become_method: sudo
-  roles:
-    - docker
+  tasks:
+    - name: Install Docker
+      ansible.builtin.include_role:
+        name: docker
