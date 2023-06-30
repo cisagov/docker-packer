@@ -2,7 +2,7 @@
 - hosts: all
   name: Install Docker
   become: yes
-  become_method: sudo
+  become_method: ansible.builtin.sudo
   tasks:
     - name: Install Docker
       ansible.builtin.include_role:
