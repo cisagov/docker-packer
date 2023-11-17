@@ -47,7 +47,7 @@
           tags:
             - molecule-idempotence-notest
 
-        - name: Install Node.JS
+        - name: Install Node.js
           ansible.builtin.package:
             name:
               - nodejs
