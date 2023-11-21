@@ -14,6 +14,9 @@
 - name: Import Docker playbook
   ansible.builtin.import_playbook: docker.yml
 
+- name: Import additional Reporting Engine requirements playbook
+  ansible.builtin.import_playbook: reporting_engine.yml
+
 # The AWS and Docker playbooks must run before this one, since this
 # playbook uses user groups created in those playbooks.
 - name: Import VNC playbook

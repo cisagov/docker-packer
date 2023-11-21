@@ -1,0 +1,57 @@
+---
+- hosts: all
+  name: Install additional requirements for Reporting Engine
+  become: true
+  become_method: ansible.builtin.sudo
+  tasks:
+    # TODO: This code should be broken out into its own Ansible role.
+    # See #58.
+    - name: Install Node 18 from official repo
+      block:
+        - name: Uninstall non-official versions of packages
+          ansible.builtin.apt:
+            autoremove: true
+            name:
+              - nodejs
+              - npm
+            purge: true
+            state: absent
+
+        - name: Install prerequisites so apt can use a repo over HTTPS
+          ansible.builtin.package:
+            name:
+              - apt-transport-https
+              - ca-certificates
+              - curl
+              - gnupg2
+              - lsb-release
+              - software-properties-common
+
+        - name: Get official Node repo GPG key
+          ansible.builtin.apt_key:
+            keyring: /etc/apt/trusted.gpg.d/nodesource.gpg
+            url: https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key
+
+        - name: Add the official Node repo
+          ansible.builtin.apt_repository:
+            repo: >
+              deb [signed-by=/etc/apt/trusted.gpg.d/nodesource.gpg]
+              https://deb.nodesource.com/node_18.x nodistro main
+
+        - name: Update the cache with the Node goodness
+          ansible.builtin.package:
+            update_cache: yes
+            # This cache update can cause idempotence to fail, so tell
+            # molecule to ignore any changes this task produces when
+            # testing idempotence.
+          tags:
+            - molecule-idempotence-notest
+
+        - name: Install Node.js
+          ansible.builtin.package:
+            name:
+              - nodejs
+
+    - name: Install python3-django
+      ansible.builtin.package:
+        name: python3-django
