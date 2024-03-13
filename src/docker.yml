@@ -1,6 +1,6 @@
 ---
-- hosts: all
-  name: Install Docker
+- name: Install Docker
+  hosts: all
   become: true
   become_method: ansible.builtin.sudo
   tasks:
