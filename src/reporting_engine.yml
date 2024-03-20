@@ -1,6 +1,6 @@
 ---
-- hosts: all
-  name: Install additional requirements for Reporting Engine
+- name: Install additional requirements for Reporting Engine
+  hosts: all
   become: true
   become_method: ansible.builtin.sudo
   tasks:
