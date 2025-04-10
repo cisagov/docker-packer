@@ -40,7 +40,7 @@
 
         - name: Update the cache with the Node goodness
           ansible.builtin.package:
-            update_cache: yes
+            update_cache: true
             # This cache update can cause idempotence to fail, so tell
             # molecule to ignore any changes this task produces when
             # testing idempotence.
