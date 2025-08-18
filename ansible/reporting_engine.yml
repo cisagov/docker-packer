@@ -17,15 +17,12 @@
             purge: true
             state: absent
 
-        - name: Install prerequisites so apt can use a repo over HTTPS
+        - name: >-
+            Install gnupg2 (required for 3rd-party apt repo GPG
+            manipulations)
           ansible.builtin.package:
             name:
-              - apt-transport-https
-              - ca-certificates
-              - curl
               - gnupg2
-              - lsb-release
-              - software-properties-common
 
         - name: Get official Node repo GPG key
           ansible.builtin.apt_key:
