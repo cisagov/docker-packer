@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/github/license/cisagov/docker-packer)](https://spdx.org/licenses/)
 [![CodeQL](https://github.com/cisagov/docker-packer/workflows/CodeQL/badge.svg)](https://github.com/cisagov/docker-packer/actions/workflows/codeql-analysis.yml)
 
-This project can be used to build a Debian Bookworm AMI with
+This project can be used to build a Debian Trixie AMI with
 [Docker](https://www.docker.com/) installed.
 
 ## Pre-requisites ##
